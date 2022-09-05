@@ -1,13 +1,3 @@
-let board = gameBoard()
-
-function gameBoard() {
-    let arr = []
-    for (let i = 0; i < 8; i++) {
-        arr.push(Array(8).fill(0))
-    }
-    return arr
-}
-
 const knight = (value) => {
     let val = value
     let child = []
@@ -21,9 +11,6 @@ const knight = (value) => {
         [2, -1],
         [1, -2]
     ]
-    if(board[val[0]][val[1]] === 0) {
-        board[val[0]][val[1]] = 'V'
-    }
     for (let i = 0; i < moves.length; i++) {
         if (val[0] + moves[i][0] < 8 && val[0] + moves[i][0] >= 0
             && val[1] + moves[i][1] < 8 && val[1] + moves[i][1] >= 0) {
@@ -59,7 +46,7 @@ const result = (res) => {
     }
 }
 
-
+module.exports = knightMoves
 
 
 
