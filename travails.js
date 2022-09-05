@@ -29,20 +29,14 @@ const knightMoves = (start, end) => {
         for(let i = 0; i < now.length; i++) {
             if(now[i][0] === end[0] && now[i][1] === end[1]){
                 cur.push(now[i])
-                result(cur)
+                console.log(`Achieved in ${cur.length-1} moves! Heres the Path Taken:`) 
+                cur.forEach((el) => console.log(el))
                 return 
             }
             let res = cur.slice(0)
             res.push(now[i])
             queue.push(res)
         }  
-    }
-}
-
-const result = (res) => {
-    console.log(`Achieved in ${res.length-1} moves! Heres the Path Taken:`) 
-    for(let i = 0; i <res.length; i++) {
-        console.log(res[i])
     }
 }
 
